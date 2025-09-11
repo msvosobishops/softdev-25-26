@@ -4,22 +4,23 @@ Program to check user's age and tell them if they can vote
 '''
 
 def main():
-    # get age as an int
+    # get the user's age as an int
     age = int(input("What is your age? "))
 
-    # check if they are over 18
+    # check if they are 18+
     if age >= 18:
         print("You can vote!")
-    # check if they are over 16 (but under 18)
-    elif age >= 16:
-        print("You can almost vote!!!")
-    # check if they are under 2
+    # if they're 16 or 17
+    elif 16 <= age <= 17:
+        print("You can almost vote! But you can already drive.")
+    # if they're a small child 
     elif age <= 2:
-        print("You're a baby. You can't vote.")
-    # anyone else is between 2 to 16
+        print("You're a baby.")
+    # else they are between 3 to 15
     else:
-        years_until_voting_age = 18 - age
-        print(f"You are not old enough to vote. You can vote in {years_until_voting_age} years.")
+        years_until_vote = 18 - age
+        print(f"Unfortunately you can't vote. You have to wait {years_until_vote} years")
+
     
 
 main()
