@@ -4,32 +4,29 @@ Program to check if a user can ride on a roller coaster
 '''
 
 def main():
-    # get inputs from user 
+    # get input from user 
     age = int(input("What is your age? "))
     height = int(input("What is your height in inches? "))
-    adult_present = input("Do you have an adult with you? ")
-    heart_condition = input("Do you have a heart condition? ")
+    adult_with = input("Do you have an adult with you? ").lower()
+    heart_condition = input("Do you have a heart condition? ").lower()
 
-    # Under 12 or under 42 in can't ride
-    if age < 12 or height < 42:
-        print("Sorry, you cannot ride the roller coaster")
-    
-    # Over 65 and heart condition can't ride
-    elif age > 65 and heart_condition == "yes": 
-        print("Sorry, you cannot ride the roller coaster")
-    
-    # Between 42 to 47 inch needs an adult presence
-    elif 42 <= height <= 47 and adult_present == "yes":
-        print("You may ride the roller coaster with an adult")
-    
-    # Over 48 inches can ride
+    # determine whether they can ride on the roller coaster 
+    # under 42in or under 12 yrs old cannot ride
+    if height < 42 or age < 12:
+        print("Sorry, you cannot ride the roller coaster.")
+    # over 65 and heart condition cannot ride
+    elif age > 65 and heart_condition == "yes":
+        print("Sorry, you cannot ride the roller coaster.")
+    # between 42-47 inches tall need an adult to ride
+    elif 42 <= height <= 47 and adult_with == "yes":
+        print("You may ride the roller coaster with an adult.")
+    # over 48in tall can ride
     elif height >= 48:
-        print("You may ride the roller coaster alone!")
-    
-    # Anyone else cannot ride 
+        print("You may ride the roller coaster.")
+    # anyone else cannot ride
     else:
-        print("Sorry, you cannot ride the roller coaster")
-
-        
+        print("Sorry, you cannot ride the roller coaster.")
+    
+    
 
 main()
