@@ -13,17 +13,17 @@ def main():
         if letter.lower() not in ["a","e","i","o","u"]:
             print(letter)
 
-    # Get a word from the user and give them 10 points for every 
-    # letter in the word
-    word = input("Enter a word: ")
+    # ask user for a word & give them 10 points for each letter in it
+    text = input("Enter a word: ")
     points = 0
-    for letter in word:
-        # make q worth 20 points 
-        if letter == "q":
+    # add 10 for every letter
+    for letter in text:
+        # make q worth 20
+        if letter.lower() == "q":
             points += 20
         else:
             points += 10
-    print(f"Points: {points}")
+    print(points)
 
 
 
