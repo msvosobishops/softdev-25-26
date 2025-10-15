@@ -5,6 +5,8 @@ for i in range(#)
 i will be a number, starting from 0 and going up to but not including #
 '''
 
+import random
+
 def main():
     # example loop
     # for i in range(8):
@@ -36,5 +38,17 @@ def main():
     for i in range(10):
         print(i, end=", ")
     print()
+
+    # Flip a coin and roll a die 5 times
+    for i in range(5):
+        # flip coin 
+        coin = ["heads", "tails"]
+        result = random.choice(coin)
+        print(result)
+    
+    # roll die
+    for i in range(5):
+        result = random.randrange(1,7)
+        print(result)
 
 main()
