@@ -39,9 +39,8 @@ def main():
         print(i, end=", ")
     print()
 
-    # Flip a coin and roll a die 5 times
+    # Flip a coin 5 times
     for i in range(5):
-        # flip coin 
         coin = ["heads", "tails"]
         result = random.choice(coin)
         print(result)
@@ -50,5 +49,6 @@ def main():
     for i in range(5):
         result = random.randrange(1,7)
         print(result)
+    
 
 main()

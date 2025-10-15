@@ -1,48 +1,53 @@
 '''
 While Loops Notes
 
-while (condition is true):
-    code to run when condition is true
+while (condition is True):
+    code to run
 
 while True:
-    code to run (forever)
+    code to run
     if condition to break from the loop
 
-Control-C will kill a program in the terminal
+break is the keyword used to break from a loop 
+
+Control-C is the keyboard shortcut to kill a program in the terminal
 '''
-import random
+import random 
 
 def main():
-    # loop to generate random numbers (1-1000) until we get 67
+    # write a loop to generate numbers 1-1000 until we get 10 
+    # give num an initial value
     num = 0
-    accumulator = 0
-    while num != 67:
+    # make a counter variable to keep track of how many numbers we generated 
+    counter = 0
+    # loop until we get 10
+    while num != 10:
         num = random.randrange(1,1001)
+        counter += 1
         print(num)
-        # keep track of how many numbers we've generated
-        accumulator += 1
     
-    print(f"Numbers generated: {accumulator}")
+    print(f"It took {counter} tries to get 10")
 
-
-    # loop until we get heads 5 times in a row 
-    current_streak = 0
+    # write a loop to flip a coin until we get heads 5 times in a row 
+    heads_in_a_row = 0
     total_flips = 0
+
     while True:
-        result = random.choice(["heads","tails"])
+        result = random.choice(["heads", "tails"])
         print(result)
+        # add to total flips 
         total_flips += 1
-
+        # add to streak
         if result == "heads":
-            current_streak += 1
-        # tails resets the streak
+            heads_in_a_row += 1
+        # reset streak when you get tails
         else:
-            current_streak = 0
-
-        # break when there's 5 heads in a row
-        if current_streak == 10:
+            heads_in_a_row = 0
+        
+        # break when 5 heads in a row
+        if heads_in_a_row == 5:
             break
-    
-    print(total_flips)
+
+    print(f"It took {total_flips} flips to get heads 5 times")
 
 main()
