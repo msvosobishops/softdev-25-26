@@ -20,4 +20,13 @@ def main():
     # Negative Indexing - use to count from the end of the list backwards
     print(fav_foods[-1])
 
+    # Write a loop to print out that we like each food 
+    print()
+    for food in fav_foods:
+        print(f"I really like {food}!")
+
+    # Write a loop to print out "My #1 fav food is..." etc
+    for i, food in enumerate(fav_foods):
+        print(f"My #{i+1} favorite food is {food}!")
+
 main()

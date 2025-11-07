@@ -1,50 +1,33 @@
 '''
-Random Seating Chart Program
+A program to create a seating chart for class
 '''
-
-import random 
+import random
 
 def main():
-    students = ['Ari', 'Minh', 'Anya', 'Charlotte', 'Laura', 'Cady', 
-                'Isabelle', 'Katelyn', 'Yuna', 'Julian', 'Ian', 'Noah',
-                'David', 'Jonah', 'Brooke']
+    students = ['Kiran', 'Fei-Lian', 'Ashali', 'Caden',
+                'Henry', 'Jaden', 'Connor', 'Theo', 
+                'Michael', 'Benny', 'Daniel', 'Alice',
+                'Emma']
 
-    # remove absent students 
-    remove_absent = input("Is anyone absent? (y or n) ")
-    if remove_absent.lower() == 'y':
-        # loop to remove absent students
-        while True:
-            person = input("Enter absent student. (q to quit) ")
-            # only remove students in the list (to avoid error)
-            if person.capitalize() in students:
-                students.remove(person.capitalize())
-            # q to quit
-            if person == "q":
-                break
-
-    # randomize the students in the list 
+    # randomly mix up the list 
     random.shuffle(students)
 
-    # Ask the user how many groups they want 
-    # Split the class into that many groups (approx the same size)
-    n = int(input("How many groups? "))
+    # Ask the user how many tables 
+    # Divvy up the students amongst those 
+    n = int(input("How many tables? "))
     group_size = len(students) // n 
     remainder = len(students) % n 
 
-    # initial start and stop value
     start = 0
-    stop = 0
+    stop = group_size
     for i in range(n):
-        stop += group_size
-        # add an extra person to some groups 
+        # add the extra students to the first few groups 
         if i < remainder:
-            stop = stop + 1
-        # print the groups 
-        print(f"Table {i+1}: {students[start:stop]}")
+            stop += 1
 
-        # set start value for next loop 
+        print(f"Table {i+5}: {students[start : stop]}")
+        # change start and stop for next loop
         start = stop
-    
-
+        stop += group_size
 
 main()

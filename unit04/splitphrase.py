@@ -1,14 +1,17 @@
+'''
+Split phrase
+'''
+
 def main():
-    word = input("enter a phrase: ")
+    phrase = input("Enter a string: ")
 
-    # index of the middle 
-    middle = len(word) // 2
+    mid = len(phrase) // 2
 
-    # print first half 
-    print(word[:middle])
+    # print the first half 
+    print(phrase[:mid])
 
-    # loop to print second half
-    for letter in word[middle:]:
-        print(" "*middle + letter)
+    # print the second half, one letter on each line 
+    for letter in phrase[mid:]:
+        print(" "*mid + letter)
 
 main()
