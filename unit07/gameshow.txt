@@ -1,0 +1,6 @@
+Contestant,Age,Points
+Luna,17,120
+Max,16,135
+Nova,18,110
+Zane,17,140
+Ivy,16,150
